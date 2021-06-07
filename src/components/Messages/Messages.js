@@ -16,11 +16,13 @@ function Messages({ uname = "Saaketh" }) {
         });
       });
       setMessages(msgs);
+      var objDiv = document.getElementById("messages");
+      objDiv.scrollTop = objDiv.scrollHeight;
     });
   }, []);
 
   return (
-    <div className="Messages">
+    <div className="Messages" id="messages">
       {messages.map((message) => {
         return (
           <Message right={message.uname === uname} uname={message.uname}>

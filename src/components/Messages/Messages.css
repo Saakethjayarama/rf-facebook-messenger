@@ -1,5 +1,5 @@
 .Messages {
   min-width: 100%;
-  margin-bottom: 100px;
-  /* background-color: red; */
+  max-height: 75vh;
+  overflow: scroll;
 }

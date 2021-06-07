@@ -15,7 +15,8 @@ const useStyle = makeStyles((theme) => ({
   },
   AppFormContainer: {
     display: "flex",
-    width: "100%",
+    width: "90%",
+    margin: "auto",
   },
   sendBtn: {
     color: "#007FFF",
