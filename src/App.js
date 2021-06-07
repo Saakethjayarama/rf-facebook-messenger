@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Messages from "./components/Messages";
-import { sendMessage, deleteMessages, listen } from "./Firebase";
+import { sendMessage, listen } from "./Firebase";
 
 const useStyle = makeStyles((theme) => ({
   heading: {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Message from "../Message";
 import { listen } from "../../Firebase";
 import "./Messages.css";
+import FlipMove from "react-flip-move";
 
 const getMonth = (month) => {
   switch (month) {
@@ -76,19 +77,21 @@ function Messages({ uname = "Saaketh" }) {
 
   return (
     <div className="Messages" id="messages">
-      {messages.map((message) => {
-        return (
-          <Message
-            right={message.uname === uname}
-            uname={message.uname}
-            date={message.date}
-            time={message.time}
-            key={message.id}
-          >
-            {message.message}
-          </Message>
-        );
-      })}
+      <FlipMove>
+        {messages.map((message) => {
+          return (
+            <Message
+              right={message.uname === uname}
+              uname={message.uname}
+              date={message.date}
+              time={message.time}
+              key={message.id}
+            >
+              {message.message}
+            </Message>
+          );
+        })}
+      </FlipMove>
     </div>
   );
 }
