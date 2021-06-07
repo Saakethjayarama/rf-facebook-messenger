@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Messages from "./components/Messages";
-import { sendMessage } from "./Firebase";
+import { sendMessage, deleteMessages } from "./Firebase";
 
 const useStyle = makeStyles((theme) => ({
   heading: {
@@ -34,6 +34,10 @@ function App() {
   const [uname, setUname] = useState("");
 
   useEffect(() => {
+    window.deleteMessages = () => {
+      deleteMessages();
+    };
+
     let name;
     while (!name) {
       name = prompt("Enter your name");
@@ -44,7 +48,8 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setMessage("");
-    sendMessage({ message, time_stamp: new Date(), uname: "Saaketh" });
+    console.log(uname);
+    sendMessage({ message, time_stamp: new Date(), uname });
   };
   const isDisabled = !message ? true : false;
 

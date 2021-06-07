@@ -1,2 +1,2 @@
-import { sendMessage, listen } from "./Messages";
-export { sendMessage, listen };
+import { sendMessage, listen, deleteMessages } from "./Messages";
+export { sendMessage, listen, deleteMessages };

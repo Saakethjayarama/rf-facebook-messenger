@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Message from "../Message";
 import { listen } from "../../Firebase";
 import "./Messages.css";
-import { getDefaultNormalizer } from "@testing-library/dom";
 
 const getMonth = (month) => {
   switch (month) {
@@ -30,15 +29,17 @@ const getMonth = (month) => {
       return "Nov";
     case 12:
       return "Dec";
+    default:
+      return;
   }
 };
 
 const getTime = (str) => {
-  if (str.length == 1) return "0" + str;
+  if (str.length === 1) return "0" + str;
   return str;
 };
 
-function Messages({ uname = "Saaketh" }) {
+function Messages({ uname }) {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
