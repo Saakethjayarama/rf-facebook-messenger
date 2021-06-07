@@ -83,6 +83,7 @@ function Messages({ uname = "Saaketh" }) {
             uname={message.uname}
             date={message.date}
             time={message.time}
+            key={message.id}
           >
             {message.message}
           </Message>

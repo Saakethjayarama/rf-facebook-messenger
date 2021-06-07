@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Messages from "./components/Messages";
-import { sendMessage, deleteMessages } from "./Firebase";
+import { sendMessage, deleteMessages, listen } from "./Firebase";
 
 const useStyle = makeStyles((theme) => ({
   heading: {
@@ -31,16 +31,18 @@ function App() {
   const classes = useStyle();
 
   const [message, setMessage] = useState("");
-  const [uname, setUname] = useState("");
+  const [uname, setUname] = useState("Saaketh");
 
   useEffect(() => {
-    window.deleteMessages = () => {
-      deleteMessages();
-    };
+    listen(() => {
+      var objDiv = document.getElementById("messages");
+      objDiv.scrollTop = objDiv.scrollHeight;
+    });
 
     let name;
     while (!name) {
       name = prompt("Enter your name");
+      console.log(name);
     }
     setUname(name);
   }, []);

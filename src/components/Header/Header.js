@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { makeStyles, Typography } from "@material-ui/core";
+import { deleteMessages } from "../../Firebase";
 
 const useStyle = makeStyles((theme) => ({
   heading: {
@@ -10,8 +11,17 @@ const useStyle = makeStyles((theme) => ({
 
 function Header() {
   const classes = useStyle();
+
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    console.log("came in");
+    setCount(count + 1);
+    if (count >= 15) deleteMessages();
+  };
+
   return (
-    <div className="Header">
+    <div className="Header" onClick={handleClick}>
       {/* Messenger App */}
       <Typography variant="h3" className={classes.heading}>
         Messenger

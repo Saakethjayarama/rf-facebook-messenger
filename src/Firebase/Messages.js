@@ -19,10 +19,9 @@ const listen = (callback) => {
 const deleteMessages = () => {
   fstore
     .collection("messages")
-    .doc()
     .get()
     .then((snapshot) => {
-      snapshot.forEach((message) => {
+      snapshot.docs.forEach((message) => {
         fstore.collection("messages").doc(message.id).delete();
       });
     });
