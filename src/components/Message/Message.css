@@ -4,7 +4,7 @@
   width: fit-content;
   padding: 10px;
   max-width: 70%;
-  margin: 10px 0px;
+  margin: 20px 0px;
   position: relative;
 }
 
@@ -14,4 +14,22 @@
   border-radius: 7px;
   float: right;
   margin: 10px 0px;
+}
+
+.Message__uname {
+  color: #caccd1;
+  font-size: xx-small;
+  position: absolute;
+  top: -15px;
+}
+
+.Message__time {
+  color: #caccd1;
+  font-size: xx-small;
+  position: absolute;
+  bottom: -15px;
+}
+
+.Message__time__right {
+  right: 15px;
 }
