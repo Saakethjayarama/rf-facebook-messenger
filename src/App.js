@@ -1,6 +1,7 @@
 import { Button, makeStyles, TextField, Typography } from "@material-ui/core";
 import { Send } from "@material-ui/icons";
 import "./App.css";
+import Message from "./components/Message";
 
 const useStyle = makeStyles((theme) => ({
   heading: {
@@ -38,6 +39,18 @@ function App() {
         Welcome Saaketh
       </Typography>
       {/* Messages */}
+      <div className="App__messages">
+        <Message>corrupti eveniet beatae doloremque incidunt!</Message>
+        <Message right>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam ad
+          porro nemo saepe. Reprehenderit quibusdam error vero cumque doloremque
+          me vitae perspiciatis alias aspernatur nesciunt consequuntur
+          blanditiis facilis illum? Eius, iure? Non esse aliquid odit sunt odio.
+          r magnam nesciunt magni veniam veritatis corrupti eveniet beatae
+          doloremque incidunt!
+        </Message>
+      </div>
+
       {/* Form */}
       <div className="App__Form">
         <form>

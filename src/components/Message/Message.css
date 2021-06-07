@@ -1,0 +1,17 @@
+.Message {
+  background-color: #e4e6eb;
+  border-radius: 7px;
+  width: fit-content;
+  padding: 10px;
+  max-width: 70%;
+  margin: 10px 0px;
+  position: relative;
+}
+
+.Right__Message {
+  background-color: #0099ff;
+  color: white;
+  border-radius: 7px;
+  float: right;
+  margin: 10px 0px;
+}
