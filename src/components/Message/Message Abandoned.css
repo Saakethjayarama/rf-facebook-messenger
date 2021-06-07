@@ -1,3 +1,6 @@
+.Message__Right {
+  text-align: right;
+}
 .Message {
   background-color: #e4e6eb;
   border-radius: 7px;
@@ -12,7 +15,6 @@
   background-color: #0099ff;
   color: white;
   border-radius: 7px;
-  float: right;
   margin: 10px 0px;
 }
 

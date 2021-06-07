@@ -9,22 +9,24 @@ function Message({
   date = "3 Jan, 2020",
 }) {
   return (
-    <div className={`Message ${right && "Right__Message"}`}>
-      {!right && (
+    <React.Fragment className={right && "Message__Right"}>
+      <div className={`Message ${right && "Right__Message"}`}>
+        {!right && (
+          <>
+            <div className="Message__uname">{uname}</div>
+          </>
+        )}
+        {children}
         <>
-          <div className="Message__uname">{uname}</div>
+          <div className={`Message__time ${right && "Message__time__right"}`}>
+            {time}
+          </div>
         </>
-      )}
-      {children}
-      <>
-        <div className={`Message__time ${right && "Message__time__right"}`}>
-          {time}
+        <div className={`Message__day ${right && "Message__day__right"}`}>
+          {date}
         </div>
-      </>
-      <div className={`Message__day ${right && "Message__day__right"}`}>
-        {date}
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 
