@@ -16,4 +16,16 @@ const listen = (callback) => {
     .onSnapshot((snapshot) => callback(snapshot));
 };
 
-export { sendMessage, listen };
+const deleteMessages = () => {
+  fstore
+    .collection("messages")
+    .doc()
+    .get()
+    .then((snapshot) => {
+      snapshot.forEach((message) => {
+        fstore.collection("messages").doc(message.id).delete();
+      });
+    });
+};
+
+export { sendMessage, listen, deleteMessages };

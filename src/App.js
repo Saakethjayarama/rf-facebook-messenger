@@ -1,6 +1,6 @@
 import { Button, makeStyles, TextField, Typography } from "@material-ui/core";
 import { Send } from "@material-ui/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Messages from "./components/Messages";
@@ -31,6 +31,16 @@ function App() {
   const classes = useStyle();
 
   const [message, setMessage] = useState("");
+  const [uname, setUname] = useState("");
+
+  useEffect(() => {
+    let name;
+    while (!name) {
+      name = prompt("Enter your name");
+    }
+    setUname(name);
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setMessage("");
@@ -43,10 +53,10 @@ function App() {
       <Header />
       {/* Welcome $USERNAME */}
       <Typography variant="p" className={classes.muted}>
-        Welcome Saaketh
+        Welcome {uname}
       </Typography>
       {/* Messages */}
-      <Messages />
+      <Messages uname={uname} />
 
       {/* Form */}
       <div className="App__Form">
