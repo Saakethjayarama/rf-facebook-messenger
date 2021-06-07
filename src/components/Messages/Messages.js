@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Message from "../Message";
 
 function Messages() {
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    listen((snapshot) => {
+      const msgs = [];
+      snapshot.docs.forEach((msg) => {
+        msgs.push({
+          id: msg.id,
+          ...msg.data(),
+        });
+      });
+      console.log(msgs);
+    });
+  }, []);
+
   return (
     <div className="Messages">
       <Message>corrupti eveniet beatae doloremque incidunt!</Message>

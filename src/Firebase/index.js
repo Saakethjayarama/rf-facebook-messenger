@@ -1,2 +1,2 @@
-import { sendMessage, listener } from "./Messages";
-export { sendMessage, listener };
+import { sendMessage, listen } from "./Messages";
+export { sendMessage, listen };

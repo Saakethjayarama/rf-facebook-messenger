@@ -4,15 +4,15 @@ const sendMessage = (message, callback = () => {}) => {
   fstore
     .collection("messages")
     .doc()
-    .push(message)
+    .set({ ...message })
     .then(() => callback());
 };
 
-const listener = (callback) => {
+const listen = (callback) => {
   if (!callback) throw Error("Callback function is not optional");
   return fstore
     .collection("messages")
     .onSnapshot((snapshot) => callback(snapshot));
 };
 
-export { sendMessage, listener };
+export { sendMessage, listen };

@@ -1,8 +1,9 @@
 import { Button, makeStyles, TextField, Typography } from "@material-ui/core";
 import { Send } from "@material-ui/icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Messages from "./components/Messages";
+import { sendMessage, listen } from "./Firebase";
 
 const useStyle = makeStyles((theme) => ({
   heading: {
@@ -31,14 +32,17 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setMessage("");
-    alert(message);
+    sendMessage({ message, time_stamp: new Date(), uname: "Saaketh" });
   };
   const isDisabled = !message ? true : false;
 
   return (
     <div className="App">
       {/* Messenger Icon */}
-      <img src="https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?h=100&w=100" />
+      <img
+        src="https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?h=100&w=100"
+        alt="Messenger logo"
+      />
       {/* Messenger App */}
       <Typography variant="h3" className={classes.heading}>
         Dev Messenger
