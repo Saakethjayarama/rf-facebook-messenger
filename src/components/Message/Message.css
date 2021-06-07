@@ -33,3 +33,24 @@
 .Message__time__right {
   right: 15px;
 }
+
+.Message__day {
+  background-color: rgba(0, 0, 0, 0.653);
+  width: fit-content;
+  color: white;
+  padding: 2px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: calc(50% + -15px);
+  right: -70px;
+  visibility: hidden;
+  font-size: 12px;
+}
+
+.Message:hover .Message__day {
+  visibility: visible;
+}
+
+.Message__day__right {
+  left: -70px;
+}
