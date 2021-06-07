@@ -2,6 +2,7 @@ import { Button, makeStyles, TextField, Typography } from "@material-ui/core";
 import { Send } from "@material-ui/icons";
 import { useState } from "react";
 import "./App.css";
+import Header from "./components/Header";
 import Messages from "./components/Messages";
 import { sendMessage } from "./Firebase";
 
@@ -38,15 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* Messenger Icon */}
-      <img
-        src="https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?h=100&w=100"
-        alt="Messenger logo"
-      />
-      {/* Messenger App */}
-      <Typography variant="h3" className={classes.heading}>
-        Dev Messenger
-      </Typography>
+      <Header />
       {/* Welcome $USERNAME */}
       <Typography variant="p" className={classes.muted}>
         Welcome Saaketh

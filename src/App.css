@@ -10,5 +10,6 @@
   background-color: transparent;
   padding: 20px 10px;
   position: fixed;
-  bottom: 10px;
+  bottom: 0px;
+  background-color: white;
 }
