@@ -39,7 +39,7 @@ const getTime = (str) => {
   return str;
 };
 
-function Messages({ uname }) {
+function Messages({ uname = "Saaketh" }) {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
