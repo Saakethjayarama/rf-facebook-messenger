@@ -1,10 +1,4 @@
-import {
-  Button,
-  FormControl,
-  makeStyles,
-  TextField,
-  Typography,
-} from "@material-ui/core";
+import { Button, makeStyles, TextField, Typography } from "@material-ui/core";
 import { Send } from "@material-ui/icons";
 import "./App.css";
 
@@ -16,7 +10,6 @@ const useStyle = makeStyles((theme) => ({
     color: "#C2D7D0",
   },
   AppFormContainer: {
-    backgroundColor: "yellow",
     display: "flex",
     width: "100%",
   },
@@ -26,7 +19,6 @@ const useStyle = makeStyles((theme) => ({
   },
   tfMessage: {
     flex: 1,
-    width: "100%",
   },
 }));
 
@@ -48,7 +40,7 @@ function App() {
       {/* Messages */}
       {/* Form */}
       <div className="App__Form">
-        <FormControl>
+        <form>
           <div className={classes.AppFormContainer}>
             <TextField
               id="standard-basic"
@@ -59,7 +51,7 @@ function App() {
               <Send />
             </Button>
           </div>
-        </FormControl>
+        </form>
       </div>
     </div>
   );
