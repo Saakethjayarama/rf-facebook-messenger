@@ -12,6 +12,7 @@ const listen = (callback) => {
   if (!callback) throw Error("Callback function is not optional");
   return fstore
     .collection("messages")
+    .orderBy("time_stamp", "asc")
     .onSnapshot((snapshot) => callback(snapshot));
 };
 

@@ -1,9 +1,9 @@
 import { Button, makeStyles, TextField, Typography } from "@material-ui/core";
 import { Send } from "@material-ui/icons";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import Messages from "./components/Messages";
-import { sendMessage, listen } from "./Firebase";
+import { sendMessage } from "./Firebase";
 
 const useStyle = makeStyles((theme) => ({
   heading: {
