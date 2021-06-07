@@ -1,5 +1,6 @@
 import { Button, makeStyles, TextField, Typography } from "@material-ui/core";
 import { Send } from "@material-ui/icons";
+import { useState } from "react";
 import "./App.css";
 import Messages from "./components/Messages";
 
@@ -26,6 +27,14 @@ const useStyle = makeStyles((theme) => ({
 function App() {
   const classes = useStyle();
 
+  const [message, setMessage] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setMessage("");
+    alert(message);
+  };
+  const isDisabled = !message ? true : false;
+
   return (
     <div className="App">
       {/* Messenger Icon */}
@@ -43,14 +52,20 @@ function App() {
 
       {/* Form */}
       <div className="App__Form">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className={classes.AppFormContainer}>
             <TextField
               id="standard-basic"
               placeholder="Enter Message..."
               className={classes.tfMessage}
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
             />
-            <Button className={classes.sendBtn}>
+            <Button
+              className={classes.sendBtn}
+              disabled={isDisabled}
+              type="submit"
+            >
               <Send />
             </Button>
           </div>
