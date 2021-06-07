@@ -7,4 +7,8 @@
 
 .App__Form {
   width: 90%;
+  background-color: transparent;
+  padding: 20px 10px;
+  position: fixed;
+  bottom: 10px;
 }
