@@ -3,7 +3,7 @@
 ## Clone and Run
 
 ```
-git clone https://github.com/Saakethjayarama/rf-todos.git
+git clone https://github.com/Saakethjayarama/rf-facebook-messenger
 cd rf-todos
 npm i
 npm start

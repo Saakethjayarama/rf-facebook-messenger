@@ -10,6 +10,7 @@ const sendMessage = (message, callback = () => {}) => {
 
 const listen = (callback) => {
   if (!callback) throw Error("Callback function is not optional");
+
   return fstore
     .collection("messages")
     .orderBy("time_stamp", "asc")
@@ -28,3 +29,7 @@ const deleteMessages = () => {
 };
 
 export { sendMessage, listen, deleteMessages };
+
+// Time
+// Audio
+// Icon
